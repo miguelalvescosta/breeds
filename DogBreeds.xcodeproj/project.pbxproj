@@ -14,6 +14,17 @@
 		9E4E6C9A296D8797009D96B1 /* DogBreedsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E6C99296D8797009D96B1 /* DogBreedsTests.swift */; };
 		9E4E6CA4296D8797009D96B1 /* DogBreedsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E6CA3296D8797009D96B1 /* DogBreedsUITests.swift */; };
 		9E4E6CA6296D8797009D96B1 /* DogBreedsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E6CA5296D8797009D96B1 /* DogBreedsUITestsLaunchTests.swift */; };
+		9E4E6CB6296D90DD009D96B1 /* DogsBreedsAPIProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E6CB5296D90DD009D96B1 /* DogsBreedsAPIProtocol.swift */; };
+		9E4E6CB8296D9A43009D96B1 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E6CB7296D9A43009D96B1 /* HTTPClient.swift */; };
+		9E4E6CBA296D9A5E009D96B1 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E6CB9296D9A5E009D96B1 /* URLSessionHTTPClient.swift */; };
+		9E4E6CBC296D9A9F009D96B1 /* DogsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E6CBB296D9A9F009D96B1 /* DogsLoader.swift */; };
+		9EC6FCB2296DBC9D007D6507 /* ErrorStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCB1296DBC9D007D6507 /* ErrorStateView.swift */; };
+		9EC6FCB4296DBCEA007D6507 /* ErrorStateViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCB3296DBCEA007D6507 /* ErrorStateViewData.swift */; };
+		9EC6FCB7296DBDBF007D6507 /* DogsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCB6296DBDBF007D6507 /* DogsListView.swift */; };
+		9EC6FCB9296DBE0D007D6507 /* DogsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCB8296DBE0D007D6507 /* DogsListViewModel.swift */; };
+		9EC6FCBB296DCB9E007D6507 /* DogsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCBA296DCB9E007D6507 /* DogsListItemView.swift */; };
+		9EC6FCBD296DCC81007D6507 /* DogsItemViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCBC296DCC81007D6507 /* DogsItemViewData.swift */; };
+		9EC6FCC0296DFE50007D6507 /* TabButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCBF296DFE50007D6507 /* TabButtonsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +55,17 @@
 		9E4E6C9F296D8797009D96B1 /* DogBreedsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogBreedsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E4E6CA3296D8797009D96B1 /* DogBreedsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsUITests.swift; sourceTree = "<group>"; };
 		9E4E6CA5296D8797009D96B1 /* DogBreedsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogBreedsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9E4E6CB5296D90DD009D96B1 /* DogsBreedsAPIProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsBreedsAPIProtocol.swift; sourceTree = "<group>"; };
+		9E4E6CB7296D9A43009D96B1 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		9E4E6CB9296D9A5E009D96B1 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
+		9E4E6CBB296D9A9F009D96B1 /* DogsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsLoader.swift; sourceTree = "<group>"; };
+		9EC6FCB1296DBC9D007D6507 /* ErrorStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateView.swift; sourceTree = "<group>"; };
+		9EC6FCB3296DBCEA007D6507 /* ErrorStateViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorStateViewData.swift; sourceTree = "<group>"; };
+		9EC6FCB6296DBDBF007D6507 /* DogsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListView.swift; sourceTree = "<group>"; };
+		9EC6FCB8296DBE0D007D6507 /* DogsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListViewModel.swift; sourceTree = "<group>"; };
+		9EC6FCBA296DCB9E007D6507 /* DogsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsListItemView.swift; sourceTree = "<group>"; };
+		9EC6FCBC296DCC81007D6507 /* DogsItemViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsItemViewData.swift; sourceTree = "<group>"; };
+		9EC6FCBF296DFE50007D6507 /* TabButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +116,8 @@
 		9E4E6C87296D8793009D96B1 /* DogBreeds */ = {
 			isa = PBXGroup;
 			children = (
+				9EC6FCAE296DBC02007D6507 /* Sources */,
+				9E4E6CB2296D8F36009D96B1 /* DogBreedsNetwork */,
 				9E4E6C88296D8793009D96B1 /* DogBreedsApp.swift */,
 				9E4E6C8A296D8793009D96B1 /* ContentView.swift */,
 				9E4E6C8C296D8796009D96B1 /* Assets.xcassets */,
@@ -125,6 +149,79 @@
 				9E4E6CA5296D8797009D96B1 /* DogBreedsUITestsLaunchTests.swift */,
 			);
 			path = DogBreedsUITests;
+			sourceTree = "<group>";
+		};
+		9E4E6CB2296D8F36009D96B1 /* DogBreedsNetwork */ = {
+			isa = PBXGroup;
+			children = (
+				9E4E6CB4296D90A4009D96B1 /* DogBreeds */,
+				9E4E6CB3296D8F4E009D96B1 /* DogsAPI */,
+			);
+			path = DogBreedsNetwork;
+			sourceTree = "<group>";
+		};
+		9E4E6CB3296D8F4E009D96B1 /* DogsAPI */ = {
+			isa = PBXGroup;
+			children = (
+				9E4E6CB7296D9A43009D96B1 /* HTTPClient.swift */,
+				9E4E6CB9296D9A5E009D96B1 /* URLSessionHTTPClient.swift */,
+			);
+			path = DogsAPI;
+			sourceTree = "<group>";
+		};
+		9E4E6CB4296D90A4009D96B1 /* DogBreeds */ = {
+			isa = PBXGroup;
+			children = (
+				9E4E6CB5296D90DD009D96B1 /* DogsBreedsAPIProtocol.swift */,
+				9E4E6CBB296D9A9F009D96B1 /* DogsLoader.swift */,
+			);
+			path = DogBreeds;
+			sourceTree = "<group>";
+		};
+		9EC6FCAE296DBC02007D6507 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9EC6FCAF296DBC15007D6507 /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		9EC6FCAF296DBC15007D6507 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9EC6FCBE296DFE34007D6507 /* TabButtonsView */,
+				9EC6FCB5296DBDA7007D6507 /* DogsListView */,
+				9EC6FCB0296DBC86007D6507 /* ErrorStateView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9EC6FCB0296DBC86007D6507 /* ErrorStateView */ = {
+			isa = PBXGroup;
+			children = (
+				9EC6FCB1296DBC9D007D6507 /* ErrorStateView.swift */,
+				9EC6FCB3296DBCEA007D6507 /* ErrorStateViewData.swift */,
+			);
+			path = ErrorStateView;
+			sourceTree = "<group>";
+		};
+		9EC6FCB5296DBDA7007D6507 /* DogsListView */ = {
+			isa = PBXGroup;
+			children = (
+				9EC6FCB6296DBDBF007D6507 /* DogsListView.swift */,
+				9EC6FCB8296DBE0D007D6507 /* DogsListViewModel.swift */,
+				9EC6FCBA296DCB9E007D6507 /* DogsListItemView.swift */,
+				9EC6FCBC296DCC81007D6507 /* DogsItemViewData.swift */,
+			);
+			path = DogsListView;
+			sourceTree = "<group>";
+		};
+		9EC6FCBE296DFE34007D6507 /* TabButtonsView */ = {
+			isa = PBXGroup;
+			children = (
+				9EC6FCBF296DFE50007D6507 /* TabButtonsView.swift */,
+			);
+			path = TabButtonsView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +354,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E4E6CB6296D90DD009D96B1 /* DogsBreedsAPIProtocol.swift in Sources */,
+				9E4E6CBA296D9A5E009D96B1 /* URLSessionHTTPClient.swift in Sources */,
+				9EC6FCBD296DCC81007D6507 /* DogsItemViewData.swift in Sources */,
 				9E4E6C8B296D8793009D96B1 /* ContentView.swift in Sources */,
+				9EC6FCC0296DFE50007D6507 /* TabButtonsView.swift in Sources */,
+				9EC6FCB4296DBCEA007D6507 /* ErrorStateViewData.swift in Sources */,
+				9EC6FCB7296DBDBF007D6507 /* DogsListView.swift in Sources */,
+				9E4E6CB8296D9A43009D96B1 /* HTTPClient.swift in Sources */,
 				9E4E6C89296D8793009D96B1 /* DogBreedsApp.swift in Sources */,
+				9EC6FCB9296DBE0D007D6507 /* DogsListViewModel.swift in Sources */,
+				9E4E6CBC296D9A9F009D96B1 /* DogsLoader.swift in Sources */,
+				9EC6FCB2296DBC9D007D6507 /* ErrorStateView.swift in Sources */,
+				9EC6FCBB296DCB9E007D6507 /* DogsListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
