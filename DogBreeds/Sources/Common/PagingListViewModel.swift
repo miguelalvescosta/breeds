@@ -12,10 +12,10 @@ enum PagingState {
 
 protocol PagingViewModel: ObservableObject {
     associatedtype Item: Identifiable
-
+    
     var pagingState: PagingState { get }
     var items: [Item] { get }
-
+    
     func fetchInitial()
     func onItemAppear(_ item: Item)
     func fetchData()

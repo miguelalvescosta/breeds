@@ -6,20 +6,29 @@
 //
 
 import SwiftUI
-struct DogsItemViewData: Equatable, Hashable, Identifiable { 
+struct DogsItemViewData: Equatable, Hashable, Identifiable {
+    let id = UUID()
     var image: String = ""
     var name: String = ""
     var category: String = ""
     var origin: String = ""
     var temperament: String = ""
-    private(set) var id: Int = 0
+    var group: String = ""
+    var Dogid: Int = 0
 
     init(_ item: DogsElement) {
-        self.id = item.id
         self.name = item.name
-        self.image = item.image.url
-        self.category = item.breedGroup ?? ""
-        self.origin = item.origin ?? ""
-        self.temperament = item.temperament ?? ""
+        self.image = {
+            var imageString = ""
+            if let img = item.image {
+                imageString = img.url
+            }
+            return imageString
+        }()
+        self.category = item.breedGroup ?? "None"
+        self.origin = item.origin ?? "None"
+        self.group = item.breedGroup ?? "None"
+        self.temperament = item.temperament ?? "None"
+        self.Dogid = item.id
     }
 }

@@ -16,8 +16,11 @@ struct ErrorStateView: View {
             Button(action: {
                 viewData.buttonTapped()
             }) {
+                Text("Retry")
             }
             .padding(.horizontal, 30)
+            .foregroundColor(.white)
+            .background(.black)
         }
     }
 }

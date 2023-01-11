@@ -28,7 +28,7 @@ final class DogsListViewModel: ObservableObject, PagingViewModel {
         pagingState = .loadingInitialPage
         fetchData()
     }
-
+    
     func onItemAppear(_ item: Item) {
         if pagingState == .loadingInitialPage ||
             pagingState == .loadingNextPage ||
@@ -41,6 +41,17 @@ final class DogsListViewModel: ObservableObject, PagingViewModel {
         pagingState = .loadingNextPage
         currentPage += 1
         fetchData()
+    }
+    func sortAlphabetically(){
+        var sortedItems = items
+        sortedItems.sort { lhs, rhs in
+            lhs.name < rhs.name
+        }
+        if sortedItems.isEmpty {
+            return
+        }else{
+            items = sortedItems
+        }
     }
     
     func fetchData() {
@@ -65,6 +76,8 @@ final class DogsListViewModel: ObservableObject, PagingViewModel {
     }
     
     func handle(error: Error) {
-        self.pagingState = .error
+        DispatchQueue.main.async {
+            self.pagingState = .error
+        }
     }
 }

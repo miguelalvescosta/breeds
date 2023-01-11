@@ -27,4 +27,18 @@ public final class URLSessionHTTPClient: HTTPClient {
             }
         }.resume()
     }
+    
+    public func getAuth(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
+        var request = URLRequest(url: url)
+        request.setValue("live_rkpUkz7MPaEcUA6O2GltYHv4Uo2RLpShJpPXwRShtET7SgErX9FNmUvadKHf1YdM", forHTTPHeaderField: "x-api-key")
+        session.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+            } else if let data = data, let response = response as? HTTPURLResponse {
+                completion(.success(data, response))
+            } else {
+                completion(.failure(UnexpectedValuesRepresentation()))
+            }
+        }.resume()
+    }
 }

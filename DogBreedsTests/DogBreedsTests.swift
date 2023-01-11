@@ -9,28 +9,39 @@ import XCTest
 @testable import DogBreeds
 
 final class DogBreedsTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_fetchDogsListFailure() {
+        guard getJsonURL(for: "dogs-sample-error") != nil else {
+            return
         }
+        let model = DogsListViewModel()
+        model.fetchInitial()
+        XCTAssert(model.items == [])
+    }
+    
+    func test_fetchDogsListSuccess() {
+        guard getJsonURL(for: "dogs-sample-response") != nil else {
+            return
+        }
+        let model = DogsListViewModel()
+        model.fetchData()
+        XCTAssert(model.items.contains{ $0.name == "Afghan Hound" } == true)
+    }
+   
+    func test_SortDogsList() {
+        guard getJsonURL(for: "dogs-sample-response") != nil else {
+            return
+        }
+        let model = DogsListViewModel()
+        model.fetchData()
+        model.sortAlphabetically()
+        XCTAssert(model.items[0].name == "Affenpinscher")
     }
 
+}
+
+extension XCTestCase {
+    func getJsonURL(for name: String, fileExtension: String = "json") -> URL? {
+        let bundle = Bundle(for: type(of: self))
+        return bundle.url(forResource: name, withExtension: fileExtension)
+    }
 }
