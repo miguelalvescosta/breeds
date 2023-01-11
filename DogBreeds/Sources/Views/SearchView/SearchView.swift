@@ -8,27 +8,59 @@
 import Foundation
 import SwiftUI
 struct SearchView: View {
-    let names = ["Holly allah", "Josh", "Rhonda", "Ted"]
+    @ObservedObject var viewModel: SearchViewModel
+   
     @State private var searchText = ""
-
+    init() {
+        self.viewModel = SearchViewModel()
+        viewModel.fetchSearchList()
+    }
     var body: some View {
         NavigationStack {
-            if !searchText.isEmpty {
-                List {
-                    ForEach(searchResults, id: \.self) { name in
-                        Text(name)
+            VStack{
+                if !searchText.isEmpty {
+                    List {
+                        ForEach(searchResults, id: \.self) { breed in
+                            Button(action: {itemTapped(breed)}) {
+                                Text(breed.name)
+                            }
+                        }
                     }
                 }
             }
+            PagingListView(viewModel: viewModel) { dog in
+                DogsListItemView(dogsItem: dog)
+            } errorView: {
+                ErrorStateView(viewData:
+                                EmptyStateViewData(
+                                    buttonTapped: {
+                                        viewModel.fetchInitial()})
+                )
+            } noInternetView: {
+                ErrorStateView(viewData:
+                                EmptyStateViewData(
+                                    buttonTapped: {
+                                        viewModel.fetchInitial()})
+                )
+            } emptyView: {
+                ErrorStateView(viewData:
+                                EmptyStateViewData(
+                                    buttonTapped: {
+                                        viewModel.fetchInitial()})
+                )
+            }
+            
         }
         .searchable(text: $searchText)
     }
-
-    var searchResults: [String] {
+    func itemTapped(_ item: DogsItemViewData) {
+        searchText = item.name
+    }
+    var searchResults: [DogsItemViewData] {
         if searchText.isEmpty {
-            return names
+            return viewModel.dogsList
         } else {
-            return names.filter { $0.contains(searchText) }
+            return viewModel.dogsList.filter { $0.name.contains(searchText) }
         }
     }
 }

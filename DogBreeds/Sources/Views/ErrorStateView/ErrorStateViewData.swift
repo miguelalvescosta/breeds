@@ -8,8 +8,5 @@
 import Foundation
 
 struct EmptyStateViewData {
-    var title: String
-    var subtitle: String
-    var buttonTitle: String
     var buttonTapped: () -> Void
 }

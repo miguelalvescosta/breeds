@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-struct DogsItemViewData {
+struct DogsItemViewData: Equatable, Hashable, Identifiable { 
     var image: String = ""
     var name: String = ""
     var category: String = ""

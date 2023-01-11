@@ -27,6 +27,9 @@
 		9EC6FCC0296DFE50007D6507 /* TabButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCBF296DFE50007D6507 /* TabButtonsView.swift */; };
 		9EC6FCC3296E1E3E007D6507 /* DogsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCC2296E1E3E007D6507 /* DogsDetailView.swift */; };
 		9EC6FCC6296EC71D007D6507 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCC5296EC71D007D6507 /* SearchView.swift */; };
+		9EC6FCC8296ECA9B007D6507 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCC7296ECA9B007D6507 /* SearchViewModel.swift */; };
+		9EC6FCCB296ED45A007D6507 /* PagingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCCA296ED45A007D6507 /* PagingListView.swift */; };
+		9EC6FCCD296ED472007D6507 /* PagingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC6FCCC296ED472007D6507 /* PagingListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		9EC6FCBF296DFE50007D6507 /* TabButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabButtonsView.swift; sourceTree = "<group>"; };
 		9EC6FCC2296E1E3E007D6507 /* DogsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogsDetailView.swift; sourceTree = "<group>"; };
 		9EC6FCC5296EC71D007D6507 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		9EC6FCC7296ECA9B007D6507 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		9EC6FCCA296ED45A007D6507 /* PagingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingListView.swift; sourceTree = "<group>"; };
+		9EC6FCCC296ED472007D6507 /* PagingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,7 @@
 		9EC6FCAE296DBC02007D6507 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				9EC6FCC9296ED440007D6507 /* Common */,
 				9EC6FCAF296DBC15007D6507 /* Views */,
 			);
 			path = Sources;
@@ -242,8 +249,18 @@
 			isa = PBXGroup;
 			children = (
 				9EC6FCC5296EC71D007D6507 /* SearchView.swift */,
+				9EC6FCC7296ECA9B007D6507 /* SearchViewModel.swift */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		9EC6FCC9296ED440007D6507 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9EC6FCCA296ED45A007D6507 /* PagingListView.swift */,
+				9EC6FCCC296ED472007D6507 /* PagingListViewModel.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +395,7 @@
 			files = (
 				9EC6FCC3296E1E3E007D6507 /* DogsDetailView.swift in Sources */,
 				9E4E6CB6296D90DD009D96B1 /* DogsBreedsAPIProtocol.swift in Sources */,
+				9EC6FCC8296ECA9B007D6507 /* SearchViewModel.swift in Sources */,
 				9E4E6CBA296D9A5E009D96B1 /* URLSessionHTTPClient.swift in Sources */,
 				9EC6FCBD296DCC81007D6507 /* DogsItemViewData.swift in Sources */,
 				9E4E6C8B296D8793009D96B1 /* ContentView.swift in Sources */,
@@ -385,9 +403,11 @@
 				9EC6FCB4296DBCEA007D6507 /* ErrorStateViewData.swift in Sources */,
 				9EC6FCB7296DBDBF007D6507 /* DogsListView.swift in Sources */,
 				9E4E6CB8296D9A43009D96B1 /* HTTPClient.swift in Sources */,
+				9EC6FCCD296ED472007D6507 /* PagingListViewModel.swift in Sources */,
 				9E4E6C89296D8793009D96B1 /* DogBreedsApp.swift in Sources */,
 				9EC6FCC6296EC71D007D6507 /* SearchView.swift in Sources */,
 				9EC6FCB9296DBE0D007D6507 /* DogsListViewModel.swift in Sources */,
+				9EC6FCCB296ED45A007D6507 /* PagingListView.swift in Sources */,
 				9E4E6CBC296D9A9F009D96B1 /* DogsLoader.swift in Sources */,
 				9EC6FCB2296DBC9D007D6507 /* ErrorStateView.swift in Sources */,
 				9EC6FCBB296DCB9E007D6507 /* DogsListItemView.swift in Sources */,

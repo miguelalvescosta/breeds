@@ -12,8 +12,7 @@ struct ErrorStateView: View {
 
     var body: some View {
         VStack(alignment: .center, spacing: .zero) {
-            Text(viewData.title)
-            Text(viewData.subtitle)
+            Text("Something wrong")
             Button(action: {
                 viewData.buttonTapped()
             }) {

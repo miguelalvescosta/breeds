@@ -12,6 +12,7 @@ public enum LoadDogsResult {
 }
 public protocol DogsBreedsAPIProtocol {
     func load(currentPage: Int, completion: @escaping (LoadDogsResult) -> Void)
+    func loadSearchListBreeds(completion: @escaping (LoadDogsResult) -> Void)
 }
 
 public struct DogsElement: Codable {

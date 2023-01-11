@@ -35,6 +35,21 @@ public final class DogsLoader: DogsBreedsAPIProtocol {
             }
         }
     }
+    
+    public func loadSearchListBreeds(completion: @escaping (Result) -> Void) {
+        guard let url = URL(string: "https://api.thedogapi.com/v1/breeds") else{ return
+            completion(.failure(Error.connectivity))}
+
+        client.get(from: url) { [weak self] result in
+            guard self != nil else { return }
+            switch result {
+            case let .success(data, response):
+                completion(DogsLoader.map(data, from: response))
+            case .failure:
+                completion(.failure(Error.connectivity))
+            }
+        }
+    }
 
     private static func map(_ data: Data, from response: HTTPURLResponse) -> Result {
         do {

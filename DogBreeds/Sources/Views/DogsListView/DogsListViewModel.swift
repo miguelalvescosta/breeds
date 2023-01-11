@@ -8,64 +8,54 @@
 import Foundation
 
 
-@MainActor final class DogsListViewModel: ObservableObject {
-    enum PagingState {
-        case loadingInitialPage, loadingNextPage, loaded, finished, empty, error, noInternet
-    }
+final class DogsListViewModel: ObservableObject, PagingViewModel { 
+    typealias Item = DogsItemViewData
     
     private var useCase: DogsLoader
     var arrangementIds: [String]?
     private var currentPage = 0
     private var pageSize = 25
     @Published var pagingState: PagingState = .loaded
-    @Published var dogsList = [DogsItemViewData]()
+    @Published var items: [Item] = []
     
     init() {
         self.useCase = DogsLoader()
     }
-
-    func retrieveDogs() {
-        dogsList.removeAll()
-        pagingState = .loadingInitialPage
+    
+    func fetchInitial() {
+        items.removeAll()
         currentPage = 0
-        getDogsList()
+        pagingState = .loadingInitialPage
+        fetchData()
     }
 
-    
-    func onItemAppear(item: DogsItemViewData) {
-
+    func onItemAppear(_ item: Item) {
         if pagingState == .loadingInitialPage ||
             pagingState == .loadingNextPage ||
             pagingState == .finished {
             return
         }
-
-        guard let index = dogsList.firstIndex(where: { $0.id == item.id }) else {
+        guard let lastItem = items.last, item.id == lastItem.id else {
             return
         }
-
-        guard index == dogsList.endIndex - 1 else {
-            return
-        }
-
         pagingState = .loadingNextPage
         currentPage += 1
-        getDogsList()
+        fetchData()
     }
-
-    func getDogsList() {
+    
+    func fetchData() {
         useCase.load(currentPage: currentPage, completion: { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let dogs):
                 if dogs.isEmpty {
-                    self.pagingState = self.dogsList.isEmpty ? .empty : .finished
+                    self.pagingState = self.items.isEmpty ? .empty : .finished
                     return
                 }
                 
                 DispatchQueue.main.async {
-                    self.dogsList.append(contentsOf: dogs.map({DogsItemViewData($0)}))
+                    self.items.append(contentsOf: dogs.map({DogsItemViewData($0)}))
                     self.pagingState = .loaded
                 }
             case .failure(let error):
