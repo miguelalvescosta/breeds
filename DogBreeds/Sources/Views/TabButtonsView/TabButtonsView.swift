@@ -72,7 +72,7 @@ protocol TabButtonsItemType {
     var title: String { get }
 }
 
-struct RCHPageMenuItem: TabButtonsItemType {
+struct PageMenuItem: TabButtonsItemType {
     let title: String
 }
 

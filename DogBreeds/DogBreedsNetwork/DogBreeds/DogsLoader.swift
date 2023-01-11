@@ -22,7 +22,7 @@ public final class DogsLoader: DogsBreedsAPIProtocol {
 
     public func load(currentPage: Int = 0,
                      completion: @escaping (Result) -> Void) {
-        guard let url = URL(string: "https://api.thedogapi.com/v1/breeds?limit=10&page=\(currentPage)") else{ return
+        guard let url = URL(string: "https://api.thedogapi.com/v1/breeds?limit=10&page=\(currentPage)&order=RANDOM") else{ return
             completion(.failure(Error.connectivity))}
 
         client.get(from: url) { [weak self] result in

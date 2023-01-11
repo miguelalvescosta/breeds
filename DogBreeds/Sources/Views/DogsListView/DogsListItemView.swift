@@ -11,32 +11,35 @@ struct DogsListItemView: View {
     var dogsItem: DogsItemViewData
     
     var body: some View {
-        VStack(alignment: .leading, spacing: .zero) {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 0) {
+        NavigationLink(destination: DogsDetailView(dogsItem: dogsItem)) {
+                VStack(alignment: .leading, spacing: .zero) {
                     HStack(alignment: .top) {
-                        AsyncImage(
-                            url: URL(string: dogsItem.image),
-                            content: { image in
-                                image.resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(maxWidth: 50, maxHeight: 50)
-                            },
-                            placeholder: {
-                                ProgressView()
+                        VStack(alignment: .leading, spacing: 0) {
+                            HStack(alignment: .top) {
+                                AsyncImage(
+                                    url: URL(string: dogsItem.image),
+                                    content: { image in
+                                        image.resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 80, height: 80)
+                                    },
+                                    placeholder: {
+                                        ProgressView()
+                                    }
+                                )
+                                Spacer()
+                                Text(dogsItem.name)
+                                    .font(.system(.caption, design: .rounded))
+                                    .multilineTextAlignment(.trailing)
                             }
-                        )
-                        Spacer()
-                        Text(dogsItem.name)
-                            .multilineTextAlignment(.trailing)
-                    }
+                        }
+                        .padding(.all, 12)
+                        
+                    }.background(Color.white)
+                    Rectangle()
+                        .fill(Color.gray)
+                        .frame(height: 1)
                 }
-                .padding(.all, 12)
-                
-            }.background(Color.white)
-            Rectangle()
-                .fill(Color.black)
-                .frame(height: 1)
+            }
         }
-    }
 }

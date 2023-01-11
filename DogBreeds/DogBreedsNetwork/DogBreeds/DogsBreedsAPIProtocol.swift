@@ -15,20 +15,16 @@ public protocol DogsBreedsAPIProtocol {
 }
 
 public struct DogsElement: Codable {
-    let weight, height: Eight
     let id: Int
     let name: String
     let bredFor, breedGroup: String?
-    let lifeSpan, temperament: String?
+    let temperament: String?
     let origin: String?
-    let referenceImageID: String?
     let image: Image
-    let countryCode, description, history: String?
+    let countryCode: String?
 }
 
-public struct Eight: Codable {
-    let imperial, metric: String
-}
+
 
 public struct Image: Codable{
     let id: String

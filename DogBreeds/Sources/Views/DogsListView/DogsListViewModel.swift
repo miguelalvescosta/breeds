@@ -8,7 +8,7 @@
 import Foundation
 
 
-final class DogsListViewModel: ObservableObject {
+@MainActor final class DogsListViewModel: ObservableObject {
     enum PagingState {
         case loadingInitialPage, loadingNextPage, loaded, finished, empty, error, noInternet
     }
@@ -63,8 +63,11 @@ final class DogsListViewModel: ObservableObject {
                     self.pagingState = self.dogsList.isEmpty ? .empty : .finished
                     return
                 }
-                self.dogsList.append(contentsOf: dogs.map({DogsItemViewData($0)}))
-                self.pagingState = .loaded
+                
+                DispatchQueue.main.async {
+                    self.dogsList.append(contentsOf: dogs.map({DogsItemViewData($0)}))
+                    self.pagingState = .loaded
+                }
             case .failure(let error):
                 self.handle(error: error)
             }
